@@ -3,7 +3,7 @@ import file_obj
 
 
 def main():
-    file_location = "100_olympics.csv"
+    file_location = "blank.csv"
     header, datas = open_file(file_location)
     if not header:
         print("Files doesn't have any data.")
@@ -11,6 +11,8 @@ def main():
 
     file = file_obj.FileMaintaining(header, datas)
     file.display()
+    num_new_rows = 2
+    file.add(num_new_rows)
 
 def open_file(file_dir):
     try:
@@ -31,8 +33,8 @@ def open_file(file_dir):
 
             return header, datas
     except:
-        return None, None
-
+        raise ValueError("File is not found.")
+    
 
 if __name__ == "__main__":
     main()
