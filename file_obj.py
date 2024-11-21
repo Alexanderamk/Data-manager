@@ -22,3 +22,12 @@ class FileMaintaining:
             self.datas.append(new_row)
             print() # For space
         self.display()
+    
+    def search(self):
+        print(f"keywords(header) to search> {', '.join([head for head in self.header])}")
+        keyword = input("keyword: ")
+        while keyword not in self.header:
+            keyword = input("only use the provide keywords: ")
+        
+        
+            

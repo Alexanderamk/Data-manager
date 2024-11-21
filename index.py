@@ -4,7 +4,7 @@ from reading_data import open_file
 
 
 def main():
-    file_location = "100_olympics.csv"
+    file_location = "blank.csv"
     header, datas = open_file(file_location)
     if not header:
         print("File must have at least a header.")
@@ -20,7 +20,10 @@ def main():
         elif mode == "a":
             file.add(int(input("Number of new rows: ")))
         elif mode == "s":
-            ...
+            if datas:
+                file.search()
+            else:
+                print("Files doesn't have any data to search!")
         elif mode == "del":
             ...
         elif mode == "up":
