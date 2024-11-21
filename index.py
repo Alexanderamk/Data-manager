@@ -1,39 +1,34 @@
-import csv
 import file_obj
+from main_menu import menu
+from reading_data import open_file
 
 
 def main():
-    file_location = "blank.csv"
+    file_location = "100_olympics.csv"
     header, datas = open_file(file_location)
     if not header:
-        print("Files doesn't have any data.")
+        print("File must have at least a header.")
         return
-
     file = file_obj.FileMaintaining(header, datas)
-    file.display()
-    num_new_rows = 2
-    file.add(num_new_rows)
 
-def open_file(file_dir):
-    try:
-        with open(file_dir, "r") as file:
-            reader = csv.DictReader(file)
-            header = reader.fieldnames
-            dict_datas = list(reader)
-            datas = []
-
-            for data in dict_datas:
-                section = []
-                for field in header:
-                    if data[field] == "":
-                        section.append("None")
-                    else:
-                        section.append(data[field])
-                datas.append(section)
-
-            return header, datas
-    except:
-        raise ValueError("File is not found.")
+    menu()
+    mode = ""
+    while mode != "q":
+        mode = input("mode: ").lower()
+        if mode == "dp":
+            file.display()
+        elif mode == "a":
+            file.add(int(input("Number of new rows: ")))
+        elif mode == "s":
+            ...
+        elif mode == "del":
+            ...
+        elif mode == "up":
+            ...
+        elif mode == "q":
+            return
+        else:
+            menu()
     
 
 if __name__ == "__main__":
