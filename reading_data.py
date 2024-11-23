@@ -1,4 +1,5 @@
 import csv
+from dict_to_list import dict_to_list
 
 
 def open_file(file_dir):
@@ -7,17 +8,8 @@ def open_file(file_dir):
             reader = csv.DictReader(file)
             header = reader.fieldnames
             dict_datas = list(reader)
-            datas = []
+            datas = dict_to_list(dict_datas, header)
 
-            for data in dict_datas:
-                section = []
-                for field in header:
-                    if data[field] == "":
-                        section.append("-")
-                    else:
-                        section.append(data[field])
-                datas.append(section)
-
-            return header, datas
+            return header, datas, dict_datas
     except:
         raise ValueError("File is not found.")

@@ -5,11 +5,11 @@ from reading_data import open_file
 
 def main():
     file_location = "blank.csv"
-    header, datas = open_file(file_location)
+    header, datas, dict_datas = open_file(file_location)
     if not header:
         print("File must have at least a header.")
         return
-    file = file_obj.FileMaintaining(header, datas)
+    file = file_obj.FileMaintaining(header, datas, dict_datas)
 
     menu()
     mode = ""
