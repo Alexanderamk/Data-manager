@@ -8,6 +8,15 @@ class FileMaintaining:
         self.datas = datas
         self.dict_datas = dict_datas
 
+    def searching_data(self, mode):
+        print(f"Keywords to {mode} by> {', '.join([head for head in self.header])}")
+        keyword = input("keyword: ")
+        while keyword not in self.header:
+            keyword = input("Make sure your keyword is \nthe same with the header in the file: ")
+        
+        search = input(f"{mode} by {keyword}: ")
+        return keyword, search
+
     def display(self):
             print(tabulate(self.datas, self.header))
             print(f"Total rows: {len(self.datas)} \n")
@@ -26,12 +35,8 @@ class FileMaintaining:
         self.display()
     
     def search(self):
-        print(f"Keywords to search by> {', '.join([head for head in self.header])}")
-        keyword = input("keyword: ")
-        while keyword not in self.header:
-            keyword = input("Make sure your keyword is \nthe same with the header in the file: ")
+        keyword, search = self.searching_data("search")
         
-        search = input(f"Search by {keyword}: ")
         dict_find = []
         for data in self.dict_datas:
             if data[keyword] == search:
@@ -43,3 +48,10 @@ class FileMaintaining:
             print(f"Total rows: {len(list_find)}")
         else:
             print(f"data with {keyword} = {search} is not found")
+    
+    def delete(self):
+        keyword, search = self.searching_data("delete")
+
+        for data in self.datas:
+            if data[keyword] == search:
+                ...

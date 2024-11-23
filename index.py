@@ -25,7 +25,7 @@ def main():
             else:
                 print("Files doesn't have any data to search!")
         elif mode == "del":
-            ...
+            file.delete()
         elif mode == "up":
             ...
         elif mode == "q":
