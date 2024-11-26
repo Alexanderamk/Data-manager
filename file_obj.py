@@ -17,18 +17,25 @@ class FileMaintaining:
         print(f"Keywords to {mode} by> {', '.join([head for head in self.headers])}")
         keyword = input("keyword: ")
         while keyword not in self.headers:
-            keyword = input("Make sure your keyword is \nthe same with the header in the file: ")
+            keyword = input("Make sure your keyword is the same with the header in the file: ")
         
         search = input(f"{mode} by {keyword}: ")
         return keyword, search
 
     def display(self):
-            grid_fmt = "pretty"
+            mode = {"align": "pretty", "grid_1": "outline", "grid_2": "presto"}
+            keys = list(mode.keys())
+            print(f"Grid Type: {', '.join(keys)}")
+            grid_fmt = input("> ")
+            while grid_fmt not in keys:
+                print(f"Grid Type: {', '.join(keys)}")
+                grid_fmt = input(f"Only choose from the provide list: ")
+
             if self.rows_100:
-                print(tabulate(self.rows_100, headers="keys", tablefmt=grid_fmt))
+                print(tabulate(self.rows_100, headers="keys", tablefmt=mode[grid_fmt]))
                 print(f"Total rows: {len(self.dict_datas)}")
             else:
-                print(tabulate(self.dict_datas, headers="keys", tablefmt=grid_fmt))
+                print(tabulate(self.dict_datas, headers="keys", tablefmt=mode[grid_fmt]))
                 print(f"Total rows: {len(self.dict_datas)}")       
     
     def add(self, times):
