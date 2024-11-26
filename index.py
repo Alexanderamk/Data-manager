@@ -4,23 +4,26 @@ from reading_data import open_file
 
 
 def main():
-    file_location = "blank.csv"
-    header, datas, dict_datas = open_file(file_location)
-    if not header:
+    file_location = "files/olympics.csv"
+    headers, dict_datas, has_data = open_file(file_location)
+    if not headers:
         print("File must have at least a header.")
         return
-    file = file_obj.FileMaintaining(header, datas, dict_datas)
+    file = file_obj.FileMaintaining(headers, dict_datas)
 
     menu()
     mode = ""
     while mode != "q":
         mode = input("mode: ").lower()
         if mode == "dp":
-            file.display()
+            if has_data:
+                file.display()
+            else:
+                print("Files doesn't have any data to display!")
         elif mode == "a":
             file.add(int(input("Number of new rows: ")))
         elif mode == "s":
-            if datas:
+            if has_data:
                 file.search()
             else:
                 print("Files doesn't have any data to search!")
