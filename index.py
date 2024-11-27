@@ -4,7 +4,7 @@ from reading_data import open_file
 
 
 def main():
-    file_location = "files/olympics.csv"
+    file_location = "files/blank.csv"
     headers, dict_datas, has_data = open_file(file_location)
     if not headers:
         print("File must have at least a header.")
@@ -21,7 +21,10 @@ def main():
             else:
                 print("Files doesn't have any data to display!")
         elif mode == "a":
-            file.add(int(input("Number of new rows: ")))
+            num_row = input("Number of new rows: ")
+            while not num_row.isnumeric():
+                num_row = input("Only numbers: ")
+            file.add(int(num_row))
         elif mode == "s":
             if has_data:
                 file.search()
@@ -33,7 +36,7 @@ def main():
             ...
         elif mode == "q":
             return
-        else:
+        elif mode == "-h":
             menu()
     
 
