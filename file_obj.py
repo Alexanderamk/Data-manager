@@ -17,16 +17,13 @@ class FileMaintaining:
         datas = dict_find
 
         if dis_mode == "df":
-            mode = {"align": "pretty", "grid_1": "outline", "grid_2": "presto"}
+            mode = {"align": "pretty", "grid": "outline"}
             keys = list(mode.keys())
-            print(f"Grid Type: {', '.join(keys)}")
+            print(f"Grid Type: {', '.join(keys)} or enter for default.")
             grid_fmt = input("> ")
 
-            while grid_fmt not in keys:
-                print(f"Grid Type: {', '.join(keys)}")
-                grid_fmt = input(f"Only choose from the provide list: ")
-
-            self.grid_fmt = mode[grid_fmt]     
+            if grid_fmt:
+                self.grid_fmt = mode[grid_fmt]     
             datas = self.dict_datas[:50]
         elif dis_mode == "add":
             datas = self.dict_datas[-10:]            
@@ -35,7 +32,10 @@ class FileMaintaining:
             print(tabulate(datas, headers="keys", tablefmt=self.grid_fmt))
             print(f"Total rows: {len(self.dict_datas)}")
         else:
-            print(tabulate(datas, headers="keys", tablefmt=self.grid_fmt))
+            if dis_mode == "df" or dis_mode == "add":
+                print(tabulate(self.dict_datas, headers="keys", tablefmt=self.grid_fmt))
+            else:
+                print(tabulate(datas, headers="keys", tablefmt=self.grid_fmt))
             if dis_mode == "search" or dis_mode == "delete":
                 print(f"Total rows: {len(datas)}")
             else:
@@ -108,14 +108,18 @@ class FileMaintaining:
                     num_keys = int(input("Num of keywords must be <= 3: "))
                 
                 additional_keys = {}
+                additional_keys[keyword] = value
                 for _ in range(num_keys):
-                    extra_key = input(f"Additional keyword {', '.join([head for head in self.headers if head != keyword])}: ")
-                    while extra_key not in self.headers and extra_key == keyword:
+                    available_headers = [head for head in self.headers if head not in additional_keys]
+                    extra_key = input(f"Additional keyword {', '.join(available_headers)}: ")
+                    while extra_key not in available_headers:
                         extra_key = input("Make sure the additional keyword matches a header in the file and different from the other last one: ")
                     extra_value = input(f"{mode} by {extra_key}: ")
                     additional_keys[extra_key] = extra_value
 
-                additional_keys[keyword] = value
                 return additional_keys
         else:
             return keyword, value
+
+    def update(self):
+        ...

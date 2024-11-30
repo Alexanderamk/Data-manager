@@ -33,11 +33,11 @@ def main():
         elif mode == "del":
             file.delete()
         elif mode == "up":
-            ...
+            file.update()
         elif mode == "q":
             return
-        elif mode == "-h":
-            menu()
+        else:
+            main()
     
 
 if __name__ == "__main__":
