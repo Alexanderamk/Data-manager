@@ -4,7 +4,7 @@ from reading_data import open_file
 
 
 def main():
-    file_location = "files/blank.csv"
+    file_location = "files/olympics.csv"
     headers, dict_datas, has_data = open_file(file_location)
     if not headers:
         print("File must have at least a header.")
