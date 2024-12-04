@@ -20,3 +20,15 @@ def open_file(file_dir):
             return headers, dict_datas, len(dict_datas) >= 1
     except Exception as e:
         raise ValueError(e)
+
+
+def saving_file(datas, headers):
+    file_name = input("File name to save by: ")
+    try:
+        with open(file_name, "w", newline="", encoding='utf-8') as save:
+            writer = csv.DictWriter(save, headers)
+            writer.writeheader()
+            writer.writerows(datas)
+            print(f"Data has been saved to {file_name}")
+    except Exception as e:
+        raise ValueError(e)

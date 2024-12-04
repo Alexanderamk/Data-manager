@@ -36,7 +36,7 @@ class FileMaintaining:
                 print(tabulate(self.dict_datas, headers="keys", tablefmt=self.grid_fmt))
             else:
                 print(tabulate(datas, headers="keys", tablefmt=self.grid_fmt))
-            if dis_mode == "search" or dis_mode == "delete":
+            if dis_mode == "search" or dis_mode == "delete" or dis_mode == "update":
                 print(f"Total rows: {len(datas)}")
             else:
                 print(f"Total rows: {len(self.dict_datas)}")  
@@ -88,33 +88,32 @@ class FileMaintaining:
             print(f"No data found matching to delete.")
         
     def searching_data(self, mode):
-        print(f"Keywords to {mode} by> {', '.join([head for head in self.headers])}")
-        keyword = input("keyword: ")
+        print(f"Keywords to {mode} by> {', '.join(self.headers)}")
+        keyword = input("Keyword: ")
         while keyword not in self.headers:
             keyword = input("Make sure your keyword matches a header in the file: ")
 
-        value = input(f"{mode} by {keyword}: ")
+        value = input(f"{mode.capitalize()} by {keyword}: ")
 
-        if mode == "delete":
-            print(f"Do you want to delete all the data with {keyword} = {value}?")
-            specific = input("y (to agree), n (to specify more), or q (to cancel): ")
+        if mode == "delete" or mode == "update":
+            print(f"Do you want to {mode} all the data where {keyword} is {value}?")
+            specific = input("y (to agree), sp(to specify more), or q (to cancel): ")
             if specific.lower() == "y":
                 return {keyword: value}
             elif specific.lower() == "q":
                 return None
-            elif specific.lower() == "n":
+            elif specific.lower() == "sp":
                 num_keys = int(input("Num of keywords to specify (no more than 3): "))
                 while num_keys > 3:
                     num_keys = int(input("Num of keywords must be <= 3: "))
                 
-                additional_keys = {}
-                additional_keys[keyword] = value
+                additional_keys = {keyword: value}
                 for _ in range(num_keys):
                     available_headers = [head for head in self.headers if head not in additional_keys]
                     extra_key = input(f"Additional keyword {', '.join(available_headers)}: ")
                     while extra_key not in available_headers:
-                        extra_key = input("Make sure the additional keyword matches a header in the file and different from the other last one: ")
-                    extra_value = input(f"{mode} by {extra_key}: ")
+                        extra_key = input("Make sure the additional keyword matches a header in the file and is different from the others: ")
+                    extra_value = input(f"{mode.capitalize()} by {extra_key}: ")
                     additional_keys[extra_key] = extra_value
 
                 return additional_keys
@@ -122,4 +121,32 @@ class FileMaintaining:
             return keyword, value
 
     def update(self):
-        ...
+        # Use the searching_data function in "update" mode
+        criteria = self.searching_data("update")
+        if criteria is None:
+            print("Update canceled.")
+            return
+
+        # Find matching data
+        matching_records = []
+        for record in self.dict_datas:
+            if all(record.get(key) == value for key, value in criteria.items()):
+                matching_records.append(record)
+
+        if not matching_records:
+            print("No matching records found.")
+            return
+
+        # Display the matching records
+        print("Matching records:")
+        self.display("update", matching_records)
+            
+        # Prompt the user to update specific fields
+        for record in matching_records:
+            for key in self.headers:
+                if key in record:  # Only allow updating existing fields
+                    new_value = input(f"Enter new value for '{key}' (leave blank to keep '{record[key]}'): ")
+                    if new_value:
+                        record[key] = new_value # update the self.dict_datas directly due to the reference-based nature of Python's mutable objects
+            print() # for new line
+    

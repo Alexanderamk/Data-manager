@@ -6,6 +6,7 @@ def menu():
         ["'del' to delete the data    "],
         ["'up' to update/edit the data"],
         ["'q' to quit the program     "],
+        ["'save' to save the file"]
     ]
 
     for message in messages:

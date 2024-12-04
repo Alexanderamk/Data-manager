@@ -1,11 +1,11 @@
 import file_obj
+import reading_data
 from main_menu import menu
-from reading_data import open_file
 
 
 def main():
-    file_location = "files/olympics.csv"
-    headers, dict_datas, has_data = open_file(file_location)
+    file_location = "files/blank.csv"
+    headers, dict_datas, has_data = reading_data.open_file(file_location)
     if not headers:
         print("File must have at least a header.")
         return
@@ -36,9 +36,11 @@ def main():
             file.update()
         elif mode == "q":
             return
+        elif mode == "save":
+            reading_data.saving_file(file.dict_datas, headers)
         else:
-            main()
-    
+            menu()
+
 
 if __name__ == "__main__":
     main()
