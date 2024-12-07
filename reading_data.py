@@ -17,9 +17,9 @@ def open_file(file_dir):
                         dict_row[head] = read[head]
                 dict_datas.append(dict_row)
 
-            return headers, dict_datas, len(dict_datas) >= 1
-    except Exception as e:
-        raise ValueError(e)
+            return True, headers, dict_datas, len(dict_datas) >= 1
+    except:
+        return False, None, None, None
 
 
 def saving_file(datas, headers):
