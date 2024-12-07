@@ -1,3 +1,4 @@
+import os
 from tabulate import tabulate  # Correct import
 
 
@@ -7,9 +8,9 @@ class FileMaintaining:
         self.dict_datas = dict_datas
         self.grid_fmt = ""
 
-    def __more_than_100(self, datas):
+    def __more_than_50(self, datas):
         tot_num_row = len(datas)
-        if tot_num_row > 100:
+        if tot_num_row > 50:
             return True
         return False 
 
@@ -28,7 +29,7 @@ class FileMaintaining:
         elif dis_mode == "add":
             datas = self.dict_datas[-10:]            
 
-        if self.__more_than_100(self.dict_datas) and (dis_mode == "df" or dis_mode == "add"):
+        if self.__more_than_50(self.dict_datas) and (dis_mode == "df" or dis_mode == "add"):
             print(tabulate(datas, headers="keys", tablefmt=self.grid_fmt))
             print(f"Total rows: {len(self.dict_datas)}")
         else:
@@ -52,7 +53,6 @@ class FileMaintaining:
                 else:
                     new_row[field] = new
             self.dict_datas.append(new_row)
-            print() # For space
         self.display("add")
     
     def search(self):
@@ -66,7 +66,7 @@ class FileMaintaining:
         if dict_find:
             self.display("search", dict_find)
         else:
-            print(f"Data with {keyword} = {value} was not found")
+            print(f"Data was not found")
         
     def delete(self):
         keywords_dict = self.searching_data("delete")
@@ -93,17 +93,17 @@ class FileMaintaining:
         while keyword not in self.headers:
             keyword = input("Make sure your keyword matches a header in the file: ")
 
-        value = input(f"{mode.capitalize()} by {keyword}: ")
+        value = input(f"Value for {keyword}: ")
 
         if mode == "delete" or mode == "update":
             print(f"Do you want to {mode} all the data where {keyword} is {value}?")
-            specific = input("y (to agree), sp(to specify more), or q (to cancel): ")
+            specific = input("y (to agree), sp (to specify more), or q (to cancel): ")
             if specific.lower() == "y":
                 return {keyword: value}
             elif specific.lower() == "q":
                 return None
             elif specific.lower() == "sp":
-                num_keys = int(input("Num of keywords to specify (no more than 3): "))
+                num_keys = int(input("Num of extra keywords to specify (no more than 3): "))
                 while num_keys > 3:
                     num_keys = int(input("Num of keywords must be <= 3: "))
                 
@@ -112,7 +112,7 @@ class FileMaintaining:
                     available_headers = [head for head in self.headers if head not in additional_keys]
                     extra_key = input(f"Additional keyword {', '.join(available_headers)}: ")
                     while extra_key not in available_headers:
-                        extra_key = input("Make sure the additional keyword matches a header in the file and is different from the others: ")
+                        extra_key = input("Please choose only from the above: ")
                     extra_value = input(f"{mode.capitalize()} by {extra_key}: ")
                     additional_keys[extra_key] = extra_value
 
@@ -148,5 +148,8 @@ class FileMaintaining:
                     new_value = input(f"Enter new value for '{key}' (leave blank to keep '{record[key]}'): ")
                     if new_value:
                         record[key] = new_value # update the self.dict_datas directly due to the reference-based nature of Python's mutable objects
-            print() # for new line
-    
+            print() # For space
+        self.display("update", matching_records)
+
+    def clear_screen(self):
+        os.system("cls" if os.name == "nt" else "clear")
