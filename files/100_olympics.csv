@@ -1,0 +1,100 @@
+athlete_id,name,born_date,born_city,born_region,born_country,NOC,height_cm,weight_kg,died_date
+1,Jean-François Blanchy,1886-12-12,Bordeaux,Gironde,FRA,France,,,1960-10-02
+2,Arnaud Boetsch,1969-04-01,Meulan,Yvelines,FRA,France,183,76,
+3,Jean Borotra,1898-08-13,Biarritz,Pyrénées-Atlantiques,FRA,France,183,76,1994-07-17
+4,Jacques Brugnon,1895-05-11,Paris VIIIe,Paris,FRA,France,168,64,1978-03-20
+5,Albert Canet,1878-04-17,Wandsworth,England,GBR,France,,,1930-07-25
+6,Nicolas Chatelain,1970-01-13,Amiens,Somme,FRA,France,181,70,
+7,Patrick Chila,1969-11-27,Ris-Orangis,Essonne,FRA,France,180,73,
+8,Henri Cochet,1901-12-14,Villeurbanne,Rhône,FRA,France,,,1987-04-02
+9,Marcel Cousin,1896-08-04,Nîmes,Gard,FRA,France,,,1986-08-01
+10,Guy de la Chapelle,1868-07-16,Farges-Allichamps,Cher,FRA,France,,,1923-08-27
+11,"Élie, Comte de Lastours",1874-08-12,Orgeval,Yvelines,FRA,France,,,1932-11-18
+12,Max Decugis,1882-09-24,Paris XVIe,Paris,FRA,France,,,1978-09-06
+13,J. Defert,,,,,France,,,
+14,Étienne Durand,,,,,France,,,
+15,Damien Éloi,1969-07-04,Vire,Calvados,FRA,France,165,58,
+16,Adrien Fauchier-Magnan,1873-11-19,Paris VIIIe,Paris,FRA,France,,,1965-08-06
+17,Guy Forget,1965-01-04,Casablanca,Casablanca-Settat,MAR,France,189,79,
+18,Jean-Philippe Gatien,1968-10-16,Alès,Gard,FRA,France,178,73,
+19,Maurice Germot,1882-11-15,Vichy,Allier,FRA,France,,,1958-08-06
+20,André Gobert,1890-09-30,Paris XVIIe,Paris,FRA,France,,,1951-12-06
+21,Pierre Hirsch,1900-11-08,Paris Ie,Paris,FRA,France,,,1942-04-19
+22,René Lacoste,1904-07-02,Paris Xe,Paris,FRA,France,,,1996-10-12
+23,Daniel Lawton,1881-11-27,Cantenac,Gironde,FRA,France,,,1979-03-27
+24,Paul Lebreton,1875-10-19,Paris IIe,Paris,FRA,France,,,1960-03-31
+25,Paul Lecaron,1863-07-29,Neuilly-sur-Seine,Hauts-de-Seine,FRA,France,,,1940-09-17
+26,Henri Leconte,1963-07-04,Lillers,Pas-de-Calais,FRA,France,184,78,
+27,Christophe Legoût,1973-08-06,Montbéliard,Doubs,FRA,France,177,75,
+28,"Guy, Baron Lejeune",,,,,France,,,
+29,Albert Lippmann,,,,,France,,,
+30,Édouard Mény de Marangue,1882-11-30,Paris VIe,Paris,FRA,France,,,1960-01-23
+31,André Prévost,1875-02-28,Paris VIIIe,Paris,FRA,France,,,1951-11-22
+32,Guillaume Raoux,1970-02-14,Bagnols-sur-Cèze,Gard,FRA,France,180,77,
+33,Stéphane Renault,1968-03-01,Barfleur,Manche,FRA,France,180,72,
+34,Jean-Pierre Samazeuilh,1891-01-17,Bordeaux,Gironde,FRA,France,,,1965-04-13
+35,Fabrice Santoro,1972-12-09,Tahiti,Îles du Vent,FPN,France,177,68,
+36,Étienne Thobois,1967-09-20,Amiens,Somme,FRA,France,186,78,
+37,Pierre Verdé-Delisle,1877-05-16,Trie-la-Ville,Oise,FRA,France,,,1960-07-18
+38,Helen Aitchison,1881-12-06,Sunderland,England,GBR,Great Britain,,,1947-05-26
+39,Geraldine Beamish,1883-06-23,Forest Gate,England,GBR,Great Britain,,,1972-05-10
+40,Dora Boothby,1881-08-02,Finchley,England,GBR,Great Britain,,,1970-02-22
+41,Julie Bradbury,1967-02-12,Oxford,England,GBR,Great Britain,175,64,
+42,Gillian Clark,1961-09-02,Baghdad,Baghdad,IRQ,Great Britain,176,68,
+43,Mildred Coles,1876-04-09,Cranbrook,England,GBR,Great Britain,,,1937-02-24
+44,Evelyn Colyer,1902-08-16,Wandsworth,England,GBR,Great Britain,,,1930-11-04
+45,Charlotte Cooper,1870-09-22,Ealing,England,GBR,Great Britain,,,1966-10-10
+46,Phyllis Covell,1895-05-22,Paddington,England,GBR,Great Britain,,,1982-10-28
+47,Gladys Eastlake-Smith,1883-08-14,Lewisham,England,GBR,Great Britain,,,1941-09-18
+48,Sara Gomer,1964-05-13,Torquay,England,GBR,Great Britain,190,85,
+49,Alison Gordon,1962-12-31,Reading,England,GBR,Great Britain,175,68,
+50,Gillian Gowers,1964-04-09,,,,Great Britain,157,55,
+51,Alice Greene,1879-10-15,Upton,England,GBR,Great Britain,,,1956-10-26
+52,Edith Hannam,1878-11-28,Bristol,England,GBR,Great Britain,,,1951-01-16
+53,Dorothy Holman,1883-07-18,Kilburn,England,GBR,Great Britain,,,1968-06-15
+54,Andrea Holt,1970-11-11,Radcliffe,England,GBR,Great Britain,168,64,
+55,Monique Javer,1967-07-22,Burlingame,California,USA,Great Britain,177,64,
+56,Valda Lake,1968-10-11,Torquay,England,GBR,Great Britain,173,61,
+57,Dorothy Lambert Chambers,1878-09-03,Ealing,England,GBR,Great Britain,,,1960-01-07
+58,Lisa Lomas,1967-03-09,Dunstable,England,GBR,Great Britain,168,63,
+59,Kitty McKane,1896-05-07,Bayswater,England,GBR,Great Britain,,,1992-06-19
+60,Winifred McNair,1877-08-09,Donnington,England,GBR,Great Britain,,,1954-03-28
+61,Kelly Morgan,1975-05-22,Pontypridd,Wales,GBR,Great Britain,178,65,
+62,Agatha Morton,1872-03-06,Halstead,England,GBR,Great Britain,,,1952-04-05
+63,Jo Muggeridge,1969-04-03,London,England,GBR,Great Britain,157,59,
+64,Mabel Parton,1881-07-22,London,England,GBR,Great Britain,,,1962-08-12
+65,Violet Pinckney,1871-03-11,Alderbury,England,GBR,Great Britain,,,1955-03-13
+66,Sara Sankey,1967-09-29,Southport,England,GBR,Great Britain,170,68,
+67,Phyllis Satterthwaite,1886-01-26,Kensington,England,GBR,Great Britain,,,1962-01-20
+68,Dorothy Shepherd-Barron,1897-11-24,Beighton,England,GBR,Great Britain,,,1953-02-20
+69,Sam Smith,1971-11-27,Epping,England,GBR,Great Britain,175,62,
+70,Helen Troke,1964-11-07,Southampton,England,GBR,Great Britain,172,63,
+71,Ruth Winch,1870-08-25,Ryde,England,GBR,Great Britain,,,1952-01-09
+72,Clare Wood,1968-03-08,Zululand,KwaZulu-Natal,RSA,Great Britain,175,65,
+73,Joanne Wright-Goode,1972-11-17,Harlow,England,GBR,Great Britain,171,68,
+74,Sky Andrew,1962-03-31,Newham,England,GBR,Great Britain,185,78,
+75,Simon Archer,1973-06-27,Leamington Spa,England,GBR,Great Britain,189,86,
+76,Roper Barrett,1873-11-24,Upton,England,GBR,Great Britain,,,1943-07-27
+77,Jeremy Bates,1962-06-19,Solihull,England,GBR,Great Britain,180,72,
+78,Alfred Beamish,1879-08-06,Richmond,England,GBR,Great Britain,,,1944-02-28
+79,John Pius Boland,1870-09-16,Dublin,Dublin,IRL,Great Britain,,,1958-03-17
+80,Neil Broad,1966-11-20,Cape Town,Western Cape,RSA,Great Britain,191,87,
+81,George Caridia,1869-02-20,Kolkata (Calcutta),West Bengal,IND,Great Britain,,,1937-04-21
+82,Andrew Castle,1963-11-15,Epsom,England,GBR,Great Britain,190,74,
+83,Clement Cazalet,1869-07-16,,,,Great Britain,,,1950-03-23
+84,Xinhua Chen,1960-01-30,Fuan,Fujian,CHN,Great Britain,175,71,
+85,Alan Cooke,1966-03-23,Clay Cross,England,GBR,Great Britain,170,64,
+86,Walter Crawley,1880-03-29,Masham,England,GBR,Great Britain,,,1940-10-11
+87,Charles Dixon,1873-02-07,Grantham,England,GBR,Great Britain,,,1939-04-29
+88,Laurie Doherty,1875-10-08,Wimbledon,England,GBR,Great Britain,178,,1919-08-21
+89,Reggie Doherty,1872-10-14,Wimbledon,England,GBR,Great Britain,,,1910-12-29
+90,Desmond Douglas,1955-07-20,Kingston,Kingston,JAM,Great Britain,175,66,
+91,Wilberforce Eaves,1867-12-10,Melbourne,Victoria,AUS,Great Britain,,,1920-02-10
+92,Lionel Escombe,1876-01-01,Natal,KwaZulu-Natal,RSA,Great Britain,,,1914-10-15
+93,Anne Gibson,1968-10-26,Dumfries,Scotland,GBR,Great Britain,173,70,
+94,Brian Gilbert,1887-07-17,Barnes,England,GBR,Great Britain,,,1974-07-28
+95,Leslie Godfree,1885-04-27,Brighton,England,GBR,Great Britain,,,1971-11-17
+96,Andy Goode,1960-01-30,Welwyn Garden City,England,GBR,Great Britain,183,83,
+97,Arthur Wentworth Gore,1868-01-02,Lyndhurst,England,GBR,Great Britain,,,1928-12-01
+98,Darren Hall,1965-10-25,Walthamstow,England,GBR,Great Britain,183,73,
+99,Tim Henman,1974-09-06,Oxford,England,GBR,Great Britain,185,77,

@@ -1,3 +1,5 @@
+import os
+import keyboard
 from tabulate import tabulate  # Correct import
 
 
@@ -52,7 +54,6 @@ class FileMaintaining:
                 else:
                     new_row[field] = new
             self.dict_datas.append(new_row)
-            print() # For space
         self.display("add")
     
     def search(self):
@@ -148,5 +149,8 @@ class FileMaintaining:
                     new_value = input(f"Enter new value for '{key}' (leave blank to keep '{record[key]}'): ")
                     if new_value:
                         record[key] = new_value # update the self.dict_datas directly due to the reference-based nature of Python's mutable objects
-            print() # for new line
-    
+            print() # For space
+        self.display("update", matching_records)
+
+    def clear_screen(self):
+        os.system("cls" if os.name == "nt" else "clear")

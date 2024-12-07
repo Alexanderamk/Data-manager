@@ -4,11 +4,19 @@ from main_menu import menu
 
 
 def main():
-    file_location = "files/blank.csv"
-    headers, dict_datas, has_data = reading_data.open_file(file_location)
+    file_location = input("File location: ")
+    located = reading_data.open_file(file_location)[0]
+
+    if located:
+        headers, dict_datas, has_data = reading_data.open_file(file_location)[1:]
+    else:
+        print("File is not found!")
+        return
+
     if not headers:
         print("File must have at least a header.")
         return
+    
     file = file_obj.FileMaintaining(headers, dict_datas)
 
     menu()
@@ -34,13 +42,15 @@ def main():
             file.delete()
         elif mode == "up":
             file.update()
+        elif mode == "cls":
+            file.clear_screen()
         elif mode == "q":
             return
         elif mode == "save":
-            reading_data.saving_file(file.dict_datas, headers)
+            reading_data.saving_file(file.dict_datas, headers)      
         else:
             menu()
-
+    
 
 if __name__ == "__main__":
     main()
