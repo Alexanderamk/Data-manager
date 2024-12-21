@@ -24,7 +24,9 @@ class FileMaintaining:
             grid_fmt = input("> ")
 
             if grid_fmt:
-                self.grid_fmt = mode[grid_fmt]     
+                self.grid_fmt = mode[grid_fmt]
+            else:
+                self.grid_fmt = " "
             datas = self.dict_datas[:50]
         elif dis_mode == "add":
             datas = self.dict_datas[-10:]            
